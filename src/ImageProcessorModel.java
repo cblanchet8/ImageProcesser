@@ -26,7 +26,7 @@ public interface ImageProcessorModel {
    * This does not alter the base image.
    * @return the new image that is a blurred version of the base image.
    */
-  Image imageFilterBlur();
+  Image filterImageBlur() throws IllegalStateException;
 
   /**
    * Take in an image and apply a blur filter to it. This returns a new image with the blur filter
@@ -34,14 +34,14 @@ public interface ImageProcessorModel {
    * @param image the image to apply the blur filter to.
    * @return the new image that is a blurred version of the given image.
    */
-  Image imageFilterBlur(Image image);
+  Image filterImageBlur(Image image);
 
   /**
    * Apply a sharpen filter to the base Image loaded in this ImageProcessor and return a new image.
    * This does not alter the base image.
    * @return the new image that is a sharpened version of the base image.
    */
-  Image imageFilterSharpen();
+  Image filterImageSharpen() throws IllegalStateException;
 
   /**
    * Take in an image and apply a sharpen filter to it. This returns a new image with the sharpen
@@ -49,7 +49,7 @@ public interface ImageProcessorModel {
    * @param image the image to apply a sharpen filter to.
    * @return the new image that is a sharpened version of the given image.
    */
-  Image imageFilterSharpen(Image image);
+  Image filterImageSharpen(Image image);
 
   //TODO Implement Image Generation. This is separate from altering the loaded image, and will
   // instead generate a new image from code. This should probably be in a separate "ImageGenerator"
